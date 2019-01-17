@@ -87,7 +87,6 @@ bot.onText(/\/duty (.+)/, (msg,match) => {
       await bot.sendMessage(msgChatId, `Дежурный на дату: ${formatDate(new Date(dateFromUser))} ${dutys[1]}, смена ${dutys[2]}`);
       bot.sendContact(msgChatId, dutys[0], dutys[1]);
     });
-  });
   };      
 });
 
