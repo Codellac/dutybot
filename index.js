@@ -63,7 +63,7 @@ bot.onText(/\/duty/, (msg) => {
   let dateFromUser = new Date().getTime() + 18000000;
   
   if (msg.text == '/duty' || msg.text == '/duty@Duty_admin_bot') {
-    updateDate(dateFromUser,true);
+    updateDate(dateFromUser,true)
         await bot.sendMessage(msgChatId, "Дежурный " +dutys[1]+ ", смена " +dutys[2]);
         bot.sendContact(msgChatId, dutys[0], dutys[1]);
       });
@@ -81,7 +81,7 @@ bot.onText(/\/duty (.+)/, (msg,match) => {
   if (dateFromUser > maxDate || isNaN(dateFromUser) || dateFromUser < minDate ) {
     bot.sendMessage(msgChatId, "Неверный формат или нарушен порог! Порог даты от 01.01.2018г. до 01.01.2050г.\nПопробуйте еще раз!");
   } else {
-    updateDate(dateFromUser);
+    updateDate(dateFromUser)
     await bot.sendMessage(msgChatId, `Дежурный на дату: ${formatDate(new Date(dateFromUser))} ${dutys[1]}, смена ${dutys[2]}`);
     bot.sendContact(msgChatId, dutys[0], dutys[1]);     
   });
