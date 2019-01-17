@@ -11,7 +11,7 @@ const bot = new telegramBot(TOKEN, options);
 //Connect to database
 function connectDatabase() {
 
-  mongoose.connect(mongoURL);
+  mongoose.connect(mongoURL,{ useNewUrlParser: true });
 
   const db = mongoose.connection;
 
