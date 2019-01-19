@@ -167,5 +167,5 @@ function formatDate(date) {
   var mins = date.getMinutes();
   if (mins < 10) mins = '0' + mins;
 
-  return dd + '.' + mm + '.' + yy + ' время: ' + hh + ':' + mins;
+  return `${dd}.${mm}.${yy} время: ${hh}:${mins}`;
 };
