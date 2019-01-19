@@ -65,7 +65,7 @@ bot.onText(/\/duty/, (msg) => {
   if (msg.text == '/duty' || msg.text == '/duty@Duty_admin_bot') {
     updateDate(dateFromUser,true)
       .then(async(dutys) => {
-      await bot.sendMessage(msgChatId, `Дежурный на дату: ${dutys[1]}, смена ${dutys[2]}`);
+      await bot.sendMessage(msgChatId, `Дежурный ${dutys[1]}, смена ${dutys[2]}`);
       bot.sendContact(msgChatId, dutys[0], dutys[1]);
       });
   };
